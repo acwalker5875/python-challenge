@@ -19,10 +19,19 @@ with open(csvpath) as csvfile:
 total_votes = int(len(column(0))) 
 
 # A complete list of candidates who received votes
+canidates =[row(1)]
+
+names= (name for name in canidates)
 
 # The percentage of votes each candidate won
 
+canidate_percent = canidate_votes / total_votes
+
 # The total number of votes each candidate won
+canidate_votes = 
+
 
 # The winner of the election based on popular vote
+
+winner = max()
 

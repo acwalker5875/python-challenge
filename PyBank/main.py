@@ -26,9 +26,15 @@ total_months = int(len(column(0)))
 total_profit = sum(int(range(row[1])))
 
 # The changes in "Profit/Losses" over the entire period, and then the average of those changes
+starting_profit = 
+ending_profit = 
 
-avg_profit = int(total_profit / total_months)
+change = starting_profit - ending_profit
+
+avg_change = int(change / total_months)
 
 # The greatest increase in profits (date and amount) over the entire period
+
+greatest_profit = 
 
 # The greatest decrease in profits (date and amount) over the entire period
