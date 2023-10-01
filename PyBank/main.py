@@ -15,8 +15,8 @@ with open(csvpath) as csvfile:
         print(row)
     
 
-#     rows= csvfile.readlines()
-# print(len(rows))
+    # rows= csvfile.readlines()
+    # print(len(rows))
 
 # The total number of months included in the dataset
 total_months = int(len(column(0)))
@@ -26,8 +26,8 @@ total_months = int(len(column(0)))
 total_profit = sum(int(range(row[1])))
 
 # The changes in "Profit/Losses" over the entire period, and then the average of those changes
-starting_profit = 
-ending_profit = 
+starting_profit = (first row value)
+ending_profit = (last row value)
 
 change = starting_profit - ending_profit
 
@@ -35,6 +35,15 @@ avg_change = int(change / total_months)
 
 # The greatest increase in profits (date and amount) over the entire period
 
-greatest_profit = 
+greatest_profit = max(range(row[1]))
+
+        if row[1] == max value:
+            print("the greatest increase in profits occured in " row[0] "with profits of" row[1])
+
 
 # The greatest decrease in profits (date and amount) over the entire period
+greatest_decrease = min(range(row[1]))
+
+        if row[1] == min value:
+            print("the greatest decrease in profits occured in " row[0] "with profits of" row[1])
+

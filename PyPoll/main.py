@@ -23,12 +23,14 @@ canidates =[row(1)]
 
 names= (name for name in canidates)
 
+print(names)
+
 # The percentage of votes each candidate won
 
 canidate_percent = canidate_votes / total_votes
 
 # The total number of votes each candidate won
-canidate_votes = 
+# canidate_votes = 
 
 
 # The winner of the election based on popular vote
