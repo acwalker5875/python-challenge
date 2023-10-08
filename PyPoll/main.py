@@ -1,39 +1,46 @@
 import os
 import csv
 
-csvpath = os.path.join('..', 'Resources', 'election_data.csv')
+my_report = open(os.path.join("analysis","election_report.txt"), "w")
+csvpath = os.path.join('Resources', 'election_data.csv')
 
 with open(csvpath) as csvfile:
 
-    csvreader = csv.reader(csvfile, delimiter ='')
+    csvreader = csv.reader(csvfile)
 
-    print(csvreader)
+    # print(csvreader)
     csv_header = next(csvreader)
-    print(f"CSV Header: {csv_header}")
-
+    votes = 0
+    cans = {}
+    
     for row in csvreader:
-        print(row)
+        # votes = votes + 1
+        votes += 1
+        
+        can = row[2]
+        
+        if can not in cans.keys():
+                cans[can] = 0
+        cans[can] += 1
+                
 
-# The total number of votes cast
+output = f'''
+Election Results
+-------------------------
+Total Votes: {votes:,}
+-------------------------
+'''
 
-total_votes = int(len(column(0))) 
+winner = ["",0]
 
-# A complete list of candidates who received votes
-canidates =[row(1)]
+for can in cans.keys():
+        output += f"{can}: {cans[can]/votes * 100: .3f}% ({cans[can]:,})\n"
 
-names= (name for name in canidates)
+        if cans[can] > winner[1]:
+                winner[0] = can 
+                winner[1] = cans[can]
 
-print(names)
+output += f"-------------------------\n Winner: {winner[0]}\n-------------------------"
 
-# The percentage of votes each candidate won
-
-canidate_percent = canidate_votes / total_votes
-
-# The total number of votes each candidate won
-# canidate_votes = 
-
-
-# The winner of the election based on popular vote
-
-winner = max()
-
+print(output)
+my_report.write(output)
